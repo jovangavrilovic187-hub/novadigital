@@ -1,26 +1,20 @@
-// Sakrij loader kad se stranica učita
-window.addEventListener("load", () => {
-    document.getElementById("loader").style.display = "none";
+window.addEventListener("load",()=>{
+    const loader=document.getElementById("loader");
+    loader.style.opacity=0;
+    setTimeout(()=>loader.style.display="none",500);
 });
 
-// Animacija kartica i testimonials prilikom scroll-a
-const cards = document.querySelectorAll(".card");
-const testimonials = document.querySelectorAll(".testimonial");
+const cards=document.querySelectorAll(".card");
+const testimonials=document.querySelectorAll(".testimonial");
 
-window.addEventListener("scroll", () => {
-    const trigger = window.innerHeight * 0.85;
-
-    // Services kartice
-    cards.forEach(card => {
-        if(card.getBoundingClientRect().top < trigger){
-            card.classList.add("show");
+function animateOnScroll(elements){
+    const trigger=window.innerHeight*0.85;
+    elements.forEach((el,i)=>{
+        if(el.getBoundingClientRect().top<trigger && !el.classList.contains("show")){
+            setTimeout(()=>{el.classList.add("show");}, i*150);
         }
     });
-
-    // Testimonials
-    testimonials.forEach(t => {
-        if(t.getBoundingClientRect().top < trigger){
-            t.classList.add("show");
-        }
-    });
-});
+}
+window.addEventListener("scroll",()=>{animateOnScroll(cards);animateOnScroll(testimonials);});
+animateOnScroll(cards);
+animateOnScroll(testimonials);
