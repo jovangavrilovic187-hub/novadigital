@@ -4,8 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nova Digital VIP</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
@@ -28,35 +31,32 @@
 <div class="hero-content">
 <h2>Agencija Koja Pretvara Ideje U Profit</h2>
 <p>Strategija. Dizajn. Marketing. Rezultati.</p>
-<button class="btn" onclick="location.href='contact.html'">Zakaži Konsultacije</button>
+<a href="contact.html" class="btn">Zakaži Konsultacije</a>
 </div>
 </section>
 
-<section class="section" id="services-preview">
+<section class="section" id="services">
 <h3>Naše Usluge</h3>
 <div class="services">
 <div class="card">
 <img src="https://img.icons8.com/color/96/000000/code.png"/>
 <h4>Web Development</h4>
 <p>Moderne, brze i responsivne web stranice.</p>
-<a class="btn" href="services.html">Više</a>
 </div>
 <div class="card">
 <img src="https://img.icons8.com/color/96/000000/marketing.png"/>
 <h4>Marketing Strategija</h4>
 <p>Strategije za rast i maksimalan ROI.</p>
-<a class="btn" href="services.html">Više</a>
 </div>
 <div class="card">
 <img src="https://img.icons8.com/color/96/000000/brand.png"/>
 <h4>Branding</h4>
 <p>Vizuelni identitet koji se pamti i prodaje.</p>
-<a class="btn" href="services.html">Više</a>
 </div>
 </div>
 </section>
 
-<section class="section" id="testimonials-preview">
+<section class="section" id="testimonials">
 <h3>Šta Kažu Klijenti</h3>
 <div class="testimonials">
 <div class="testimonial">
@@ -75,11 +75,21 @@
 <h4>– Luka S.</h4>
 </div>
 </div>
-<a class="btn" href="testimonials.html">Svi klijenti</a>
+</section>
+
+<section class="section contact" id="contact">
+<h3>Kontaktirajte Nas</h3>
+<form onsubmit="alert('Poruka poslata!'); return false;">
+<input type="text" placeholder="Vaše ime" required>
+<input type="email" placeholder="Email" required>
+<textarea rows="5" placeholder="Poruka" required></textarea>
+<button type="submit">Pošalji</button>
+</form>
 </section>
 
 <footer>© 2026 Nova Digital | All rights reserved</footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>
